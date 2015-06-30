@@ -272,6 +272,7 @@ module ActiveRecord
 
       # Close then reopen the connection.
       def reconnect!
+        active?
         super
         @connection.reset
         configure_connection
